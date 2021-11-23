@@ -1,0 +1,24 @@
+{
+  "name": "02-ts-tooling",
+  "version": "0.5.0",
+  "description": "TS Tooling",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "tsc": "tsc",
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maurice de Beijer",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "prettier": "^2.4.1",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "ts-loader": "^9.2.6"
+  }
+}

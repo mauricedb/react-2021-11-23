@@ -1,6 +1,6 @@
-import { Calculator } from "./calculator";
+import { Calculator } from './calculator';
 
-const calc = new Calculator((...data) => console.log(...data))
+const calc = new Calculator((...data) => console.log(...data));
 
-const sum = calc.add(4, 2)
-console.log(`4 + 2 = ${sum}`);
+const sum = calc.add(4, 5);
+console.log(`4 + 5 = ${sum}`);
