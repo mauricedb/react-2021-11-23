@@ -1,0 +1,47 @@
+body {
+  overflow-y: scroll;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.PopularMovies {
+  flex-basis: 1200px;
+}
+
+.MovieList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MovieCard {
+  flex-basis: 220px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0.5rem;
+  border: 1px lightgray solid;
+  box-shadow: 0 0.5rem 1rem lightgrey;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.MovieCard h2 {
+  flex-grow: 1;
+  margin: 1rem;
+}
+
+.MovieCard p {
+  margin: 1rem;
+}
+
+.SelectedMovie {
+  border-radius: 0.5rem;
+  border: 1px lightgray solid;
+  box-shadow: 0 0.5rem 1rem lightgrey;
+  width: 40rem;
+  padding: 1rem;
+}
