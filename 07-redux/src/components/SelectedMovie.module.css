@@ -1,0 +1,11 @@
+.SelectedMovie {
+  border-radius: 0.5rem;
+  border: 1px lightgray solid;
+  box-shadow: 0 0.5rem 1rem lightgrey;
+  width: 40rem;
+  padding: 1rem;
+}
+
+.Favorite {
+  cursor: pointer;
+}

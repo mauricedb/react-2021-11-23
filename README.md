@@ -19,3 +19,4 @@
 - https://www.npmjs.com/
 - https://definitelytyped.org/
 - https://www.npmjs.com/package/npm-check-updates
+- https://www.npmjs.com/package/npkill
