@@ -27,7 +27,7 @@ export function SelectedMovie() {
         Released on:&nbsp;
         {new Date(movie.release_date).toLocaleDateString()}
       </p>
-      <Vote average={movie.vote_average} count={movie.vote_count} max={10} />
+      <Vote average={movie.vote_average} count={movie.vote_count} />
       <p>
         <Link to="/">Back</Link>
       </p>

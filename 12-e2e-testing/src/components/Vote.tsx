@@ -13,3 +13,7 @@ export function Vote({ average, count, max }: Props) {
     </p>
   );
 }
+
+Vote.defaultProps = {
+  max: 10,
+};
