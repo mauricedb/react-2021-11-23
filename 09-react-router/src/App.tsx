@@ -4,6 +4,7 @@ import { Dog } from './components/Dog';
 import notFound from './components/404.jpg';
 
 import './App.css';
+import { Navigate, Route, Routes } from 'react-router';
 
 function App() {
   return (
@@ -12,9 +13,17 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <Cat />
-        <Dog />
-        <img src={notFound} alt="Not found" width="800" />
+        <Routes>
+          <Route path="/" element={<div>Home</div>} />
+          <Route path="/cat" element={<Cat />} />
+          <Route path="/cat/:catName" element={<Cat />} />
+          <Route path="/dog" element={<Dog />} />
+          {/* <Route
+            path="*"
+            element={<img src={notFound} alt="Not found" width="800" />}
+          /> */}
+          <Route path="*" element={<Navigate to="/cat" />} />
+        </Routes>
       </main>
     </div>
   );

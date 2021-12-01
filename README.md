@@ -29,3 +29,6 @@
 - https://react-hook-form.com/
 - https://github.com/jquense/yup
 - https://github.com/colinhacks/zod
+- https://reactrouter.com/docs/en/v6 (version 6 docs)
+- https://v5.reactrouter.com/web/guides/quick-start (version 5 docs)
+- https://reactrouter.com/docs/en/v6/upgrading/v5

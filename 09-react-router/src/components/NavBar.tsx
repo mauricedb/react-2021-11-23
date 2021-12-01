@@ -1,17 +1,21 @@
 import { ReactElement } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export function NavBar(): ReactElement {
   return (
     <nav>
       <ul className="NavItems">
         <li>
-          <a href="/">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="/cat">Cat</a>
+          <Link to="/cat">Cat</Link>
         </li>
         <li>
-          <a href="/dog">Dog</a>
+          <Link to="/cat/Zorro">Zorro</Link>
+        </li>
+        <li>
+          <Link to="/dog">Dog</Link>
         </li>
       </ul>
     </nav>
