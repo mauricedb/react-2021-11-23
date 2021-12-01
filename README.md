@@ -25,3 +25,7 @@
 - https://immerjs.github.io/immer/
 - https://redux-toolkit.js.org/
 - https://github.com/reduxjs/reselect
+- https://formik.org/
+- https://react-hook-form.com/
+- https://github.com/jquense/yup
+- https://github.com/colinhacks/zod

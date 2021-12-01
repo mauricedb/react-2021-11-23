@@ -3,7 +3,6 @@ import { useFetch } from '../hooks/useFetch';
 
 import classes from './MovieEditor.module.css';
 import { useMemo } from 'react';
-import { Field, Form, Formik } from 'formik';
 
 interface Props {
   movieId: number;
@@ -34,10 +33,15 @@ export function MovieEditor({ clearSelectedMovie, movieId }: Props) {
     return <div>Loading...</div>;
   }
 
+  console.log(movie.title);
+
   return (
-    <Formik
-      initialValues={movie}
-      onSubmit={async (movie) => {
+    <form
+      noValidate
+      className={classes.MovieEditor}
+      onSubmit={async (e) => {
+        e.preventDefault();
+
         await fetch(url, {
           method: 'PUT',
           headers: {
@@ -48,16 +52,27 @@ export function MovieEditor({ clearSelectedMovie, movieId }: Props) {
         clearSelectedMovie();
       }}
     >
-      <Form className={classes.MovieEditor}>
-        <div>{errorMessage}</div>
+      <div>{errorMessage}</div>
 
-        <label>Title</label>
-        <Field type="text" name="title" />
+      <label>Title</label>
+      <input
+        type="text"
+        value={movie.title}
+        onChange={(e) =>
+          setData((movie) => ({ ...movie!, title: e.target.value }))
+        }
+      />
 
-        <label>Overview</label>
-        <Field rows={10} name="overview" />
+      <label>Overview</label>
+      <textarea
+        rows={10}
+        value={movie.overview}
+        onChange={(e) =>
+          setData((movie) => ({ ...movie!, overview: e.target.value }))
+        }
+      />
 
-        {/* <label>Release date</label>
+      <label>Release date</label>
       <input
         type="date"
         name="release_date"
@@ -88,17 +103,16 @@ export function MovieEditor({ clearSelectedMovie, movieId }: Props) {
       />
 
       <label>original_language</label>
-      <input type="text" defaultValue={movie.original_language} /> */}
+      <input type="text" defaultValue={movie.original_language} />
 
-        <div className={classes.EditorButtons}>
-          <button type="submit" disabled={!!errorMessage}>
-            Save
-          </button>
-          <button type="button" onClick={clearSelectedMovie}>
-            Cancel
-          </button>
-        </div>
-      </Form>
-    </Formik>
+      <div className={classes.EditorButtons}>
+        <button type="submit" disabled={!!errorMessage}>
+          Save
+        </button>
+        <button type="button" onClick={clearSelectedMovie}>
+          Cancel
+        </button>
+      </div>
+    </form>
   );
 }
