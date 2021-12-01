@@ -1,0 +1,19 @@
+.MovieEditor {
+  border-radius: 0.5rem;
+  border: 1px lightgray solid;
+  box-shadow: 0 0.5rem 1rem lightgrey;
+  padding: 1rem;
+  width: 40rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-gap: 0.5rem;
+}
+
+.MovieEditor label {
+  grid-column: 1 / 2;
+}
+
+.MovieEditor input,
+.EditorButtons {
+  grid-column: 2 / 3;
+}
