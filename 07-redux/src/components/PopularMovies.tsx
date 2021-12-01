@@ -1,34 +1,37 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { Dispatch, ReactElement, useEffect, useState } from 'react';
 import { Movie } from '../types/movie';
 import { SelectedMovie } from './SelectedMovie';
 
 import classes from './PopularMovies.module.css';
 import { MovieList } from './MovieList';
-
-const url =
-  'https://the-problem-solver-sample-data.azurewebsites.net/popular-movies';
+import { useDispatch, useSelector } from 'react-redux';
+import { AllActions, LOAD_MOVIES, MovieState } from '../store/types';
 
 export default function PopularMovies(): ReactElement {
-  const [selectedMovieId, setSelectedMovieId] = useState<Number>(NaN);
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const dispatch = useDispatch();
+
+  const movies = useSelector<MovieState, Movie[]>((state) => state.movies);
+  const selectedMovieId = useSelector<MovieState, number>(
+    (state) => state.selectedMovieId
+  );
+
   const selectedMovie = movies.find(
     (movie: Movie) => movie.id === selectedMovieId
   );
 
   useEffect(() => {
-    async function executeFetch() {
-      const rsp = await fetch(url);
-      setMovies(await rsp.json());
-    }
-
-    executeFetch();
-  }, []);
+    dispatch(LOAD_MOVIES);
+  }, [dispatch]);
 
   function toggleFavorite(movieId: number): void {
-    const newMovies = movies.map((m) =>
-      m.id === movieId ? { ...m, favorite: !m.favorite } : m
-    );
-    setMovies(newMovies);
+    const newMovies = movies.map((movie) => {
+      if (movie.id === movieId) {
+        return { ...movie, favorite: !movie.favorite };
+      }
+      return movie;
+    });
+
+    // setMovies(newMovies);
   }
 
   return (
@@ -38,14 +41,14 @@ export default function PopularMovies(): ReactElement {
       {selectedMovie ? (
         <SelectedMovie
           movie={selectedMovie}
-          clearSelectedMovie={() => setSelectedMovieId(NaN)}
+          clearSelectedMovie={() => {
+            //  setSelectedMovieId(NaN);
+            dispatch({ type: 'SELECT-MOVIE', payload: NaN });
+          }}
           toggleFavorite={toggleFavorite}
         />
       ) : (
-        <MovieList
-          movies={movies}
-          onMovieClick={(movie) => setSelectedMovieId(movie.id)}
-        />
+        <MovieList />
       )}
     </main>
   );

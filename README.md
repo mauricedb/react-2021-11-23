@@ -20,3 +20,8 @@
 - https://definitelytyped.org/
 - https://www.npmjs.com/package/npm-check-updates
 - https://www.npmjs.com/package/npkill
+- https://redux.js.org/
+- https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+- https://immerjs.github.io/immer/
+- https://redux-toolkit.js.org/
+- https://github.com/reduxjs/reselect

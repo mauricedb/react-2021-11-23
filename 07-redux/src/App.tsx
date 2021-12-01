@@ -2,11 +2,16 @@ import React from 'react';
 import './App.css';
 import PopularMovies from './components/PopularMovies';
 
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
 function App() {
   return (
-    <div className="App">
-      <PopularMovies />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <PopularMovies />
+      </div>
+    </Provider>
   );
 }
 
