@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 800px;
+}
+
+.NavItems {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
