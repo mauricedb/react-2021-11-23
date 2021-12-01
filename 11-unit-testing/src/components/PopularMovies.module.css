@@ -1,0 +1,8 @@
+.PopularMovies {
+  flex-basis: 1200px;
+}
+
+.MovieList {
+  display: flex;
+  flex-wrap: wrap;
+}
