@@ -37,6 +37,7 @@
 - https://jestjs.io/
 - https://stryker-mutator.io/
 - https://testing-library.com/docs/queries/about#priority
+- https://www.cypress.io/
 
 
 
