@@ -32,3 +32,6 @@
 - https://reactrouter.com/docs/en/v6 (version 6 docs)
 - https://v5.reactrouter.com/web/guides/quick-start (version 5 docs)
 - https://reactrouter.com/docs/en/v6/upgrading/v5
+- https://github.com/RicoSuter/NSwag
+- https://swagger.io/
+

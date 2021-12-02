@@ -1,3 +1,6 @@
+import PropsTypes from 'prop-types';
+import { FC } from 'react';
+
 interface Props {
   average: number;
   count: number;
@@ -13,3 +16,11 @@ export function Vote({ average, count, max }: Props) {
     </p>
   );
 }
+
+Vote.propTypes = {
+  count: PropsTypes.number.isRequired,
+};
+
+Vote.defaultProps = {
+  max: 10,
+};

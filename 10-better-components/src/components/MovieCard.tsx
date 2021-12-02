@@ -4,16 +4,20 @@ import { Movie } from '../types/movie';
 import { Vote } from './Vote';
 
 import classes from './MovieCard.module.css';
+import React from 'react';
 
 interface Props {
   movie: Movie;
+  styles?: object;
 }
 
-export function MovieCard({ movie }: Props) {
+export function MovieCard({ movie, styles }: Props) {
   const navigate = useNavigate();
 
+  console.count('MovieCard');
   return (
     <article
+      style={styles}
       className={classes.MovieCard}
       onClick={() => {
         navigate(`/movie/${movie.id}`);
@@ -31,3 +35,7 @@ export function MovieCard({ movie }: Props) {
     </article>
   );
 }
+
+export const MovieCardMemo = React.memo(MovieCard);
+
+MovieCardMemo.displayName = 'MovieCardMemo2';
