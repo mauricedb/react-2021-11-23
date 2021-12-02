@@ -34,4 +34,9 @@
 - https://reactrouter.com/docs/en/v6/upgrading/v5
 - https://github.com/RicoSuter/NSwag
 - https://swagger.io/
+- https://jestjs.io/
+- https://stryker-mutator.io/
+- https://testing-library.com/docs/queries/about#priority
+
+
 

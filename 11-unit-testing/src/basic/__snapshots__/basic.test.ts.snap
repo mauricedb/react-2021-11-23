@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Some basic tests Test for error 1`] = `"Another error"`;
