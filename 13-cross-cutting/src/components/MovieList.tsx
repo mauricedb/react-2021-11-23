@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { Movie } from '../types/movie';
 import { MovieCard } from './MovieCard';

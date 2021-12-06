@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from './AuthContext';
 import classes from './Login.module.css';
 
 export function Login() {
-  const [user, setUser] = useState<string | null>(null);
+  const { user, setUser } = useContext(AuthContext);
 
   return (
     <div className={classes.Login}>
@@ -10,11 +11,23 @@ export function Login() {
         <>
           <p>Hello {user}</p>
           <div>
-            <button onClick={() => setUser(null)}>Logout</button>
+            <button
+              onClick={() => {
+                return setUser(null);
+              }}
+            >
+              Logout
+            </button>
           </div>
         </>
       ) : (
-        <button onClick={() => setUser('Jack Sparrow')}>Login</button>
+        <button
+          onClick={() => {
+            return setUser('Jack Sparrow');
+          }}
+        >
+          Login
+        </button>
       )}
     </div>
   );

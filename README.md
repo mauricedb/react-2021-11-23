@@ -38,6 +38,6 @@
 - https://stryker-mutator.io/
 - https://testing-library.com/docs/queries/about#priority
 - https://www.cypress.io/
-
-
-
+- https://github.com/bvaughn/react-error-boundary
+- https://swr.vercel.app/
+- https://react-query.tanstack.com/

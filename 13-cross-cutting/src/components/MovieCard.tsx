@@ -15,7 +15,6 @@ interface Props {
 export function MovieCard({ movie, styles, type }: Props) {
   const navigate = useNavigate();
 
-  console.count('MovieCard');
   return (
     <article
       style={styles}
