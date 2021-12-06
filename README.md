@@ -41,3 +41,6 @@
 - https://github.com/bvaughn/react-error-boundary
 - https://swr.vercel.app/
 - https://react-query.tanstack.com/
+- https://www.npmjs.com/package/react-snap
+- https://nextjs.org/
+

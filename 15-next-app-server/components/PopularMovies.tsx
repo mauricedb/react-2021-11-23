@@ -1,15 +1,12 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { Movie } from '../types/movie';
-import { MovieCard } from '../components/MovieCard';
-import { SelectedMovie } from '../components/SelectedMovie';
+import { MovieCard } from './MovieCard';
+import { SelectedMovie } from './SelectedMovie';
 
-import classes from '../components/PopularMovies.module.css';
+import classes from './PopularMovies.module.css';
 
-const Home: NextPage = () => {
+export function PopularMovies(): ReactElement {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const { data: movies, error } = useFetch<Movie[]>(
     'https://the-problem-solver-sample-data.azurewebsites.net/popular-movies'
@@ -46,6 +43,4 @@ const Home: NextPage = () => {
       )}
     </main>
   );
-};
-
-export default Home;
+}
