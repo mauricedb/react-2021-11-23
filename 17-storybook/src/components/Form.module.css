@@ -1,0 +1,14 @@
+.Form {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-gap: 0.5rem;
+}
+
+.Form label {
+  grid-column: 1 / 2;
+}
+
+.Form input,
+.EditorButtons {
+  grid-column: 2 / 3;
+}

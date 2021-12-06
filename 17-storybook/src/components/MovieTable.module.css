@@ -1,0 +1,31 @@
+.Table {
+  width: 800px;
+  /* border: gray solid 1px; */
+  border: rgba(204, 204, 204, 0.75) solid 1px;
+  border-spacing: 0;
+}
+
+/* .Table tr {
+  border: gray solid 1px;
+} */
+
+.Table thead tr {
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+.Table tbody tr:nth-child(odd) {
+  background-color: rgba(204, 204, 204, 0.22);
+}
+
+.Table td,
+.Table th {
+  padding: 0.5rem;
+}
+
+.TitleHeader {
+  text-align: left;
+}
+
+.ButtonHeader {
+  width: 1px;
+}
