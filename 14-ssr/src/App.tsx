@@ -4,7 +4,11 @@ import { ToDoItems } from './components/ToDoItems';
 
 function App() {
   return (
-    <div className={`container`}>
+    <div
+      className={`container ${
+        navigator.userAgent === 'ReactSnap' ? 'blur' : ''
+      }`}
+    >
       <ToDoItems />
     </div>
   );
