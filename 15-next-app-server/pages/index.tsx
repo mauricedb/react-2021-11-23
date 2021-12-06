@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
@@ -9,16 +9,36 @@ import { SelectedMovie } from '../components/SelectedMovie';
 
 import classes from '../components/PopularMovies.module.css';
 
-const Home: NextPage = () => {
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-  const { data: movies, error } = useFetch<Movie[]>(
-    'https://the-problem-solver-sample-data.azurewebsites.net/popular-movies'
+// export const getServerSideProps: GetServerSideProps<Props> = async (
+//   context
+// ) => {
+//   const rsp = await fetch(
+//     `https://the-problem-solver-sample-data.azurewebsites.net/popular-movies`
+//   );
+//   const movies = await rsp.json();
+
+//   return {
+//     props: { movies },
+//   };
+// };
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const rsp = await fetch(
+    `https://the-problem-solver-sample-data.azurewebsites.net/popular-movies`
   );
+  const movies = await rsp.json();
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  return {
+    props: { movies },
+    revalidate: 60,
+  };
+};
 
+interface Props {
+  movies: Movie[];
+}
+
+const Home: NextPage<Props> = ({ movies }) => {
   if (!movies) {
     return <div>Loading...</div>;
   }
@@ -26,24 +46,14 @@ const Home: NextPage = () => {
   return (
     <main className={classes.PopularMovies}>
       <h1>Popular Movies</h1>
-      {selectedMovie ? (
-        <SelectedMovie
-          movie={selectedMovie}
-          clearSelectedMovie={() => setSelectedMovie(null)}
-        />
-      ) : (
-        <>
-          <section className={classes.MovieList}>
-            {movies?.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                selectMovie={() => setSelectedMovie(movie)}
-              />
-            ))}
-          </section>
-        </>
-      )}
+
+      <>
+        <section className={classes.MovieList}>
+          {movies?.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </section>
+      </>
     </main>
   );
 };
