@@ -10,9 +10,17 @@ interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, 'name'> {
   children: ReactNode;
   name: string;
   setData: React.Dispatch<SetStateAction<any>>;
+  errorMessage?: string;
 }
 
-export function LabelInput({ children, data, name, setData, ...props }: Props) {
+export function LabelInput({
+  children,
+  data,
+  name,
+  setData,
+  errorMessage,
+  ...props
+}: Props) {
   const value = data[name] as any;
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setData?.((data: any) => ({ ...data, [name]: e.target.value }));
@@ -22,6 +30,9 @@ export function LabelInput({ children, data, name, setData, ...props }: Props) {
     <>
       <label>{children}</label>
       <input type="text" value={value} onChange={onChange} {...props} />
+      {errorMessage ? (
+        <div style={{ backgroundColor: 'red' }}> {errorMessage}</div>
+      ) : null}
     </>
   );
 }
