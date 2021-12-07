@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getInitialToDos } from '../initialToDos';
 import { AddNewTodo } from './AddNewTodo';
+import { CheckPrimeNumbers } from './CheckPrimeNumbers';
 import { filterToDos } from './filterToDos';
 import { RenderCount } from './RenderCount';
 
@@ -46,6 +47,7 @@ export function ToDoItems() {
         onLabelToDo={onLabelToDo}
         onToggleDone={onToggleDone}
       />
+      <CheckPrimeNumbers />
     </main>
   );
 }
