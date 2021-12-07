@@ -1,4 +1,4 @@
-import { IsPrimeNumber } from './IsPrimeNumber';
+import { IsPrimeNumber, IsPrimeNumberMemo } from './IsPrimeNumber';
 
 export function CheckPrimeNumbers() {
   const values = [
@@ -12,7 +12,7 @@ export function CheckPrimeNumbers() {
 
       <ul className="list-group">
         {values.map((value) => (
-          <IsPrimeNumber key={value} value={value} />
+          <IsPrimeNumberMemo key={value} value={value} />
         ))}
       </ul>
     </section>

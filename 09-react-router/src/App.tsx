@@ -1,10 +1,14 @@
 import { NavBar } from './components/NavBar';
-import { Cat } from './components/Cat';
-import { Dog } from './components/Dog';
+// import Cat from './components/Cat';
+// import Dog from './components/Dog';
 import notFound from './components/404.jpg';
 
 import './App.css';
 import { Navigate, Route, Routes } from 'react-router';
+import React from 'react';
+
+const Cat = React.lazy(() => import('./components/Cat'));
+const Dog = React.lazy(() => import('./components/Dog'));
 
 function App() {
   return (
