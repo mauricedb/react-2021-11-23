@@ -43,4 +43,8 @@
 - https://react-query.tanstack.com/
 - https://www.npmjs.com/package/react-snap
 - https://nextjs.org/
+- https://www.npmjs.com/package/@welldone-software/why-did-you-render
+- https://lodash.com/docs/4.17.15#memoize
+- https://github.com/alexreardon/memoize-one
+- https://www.npmjs.com/package/source-map-explorer
 
