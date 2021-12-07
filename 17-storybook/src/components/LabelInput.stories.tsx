@@ -6,7 +6,7 @@ const meta: ComponentMeta<typeof LabelInput> = {
   title: 'Components/Atoms/LabelInput',
   component: LabelInput,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    // backgroundColor: { control: 'color' },
     setData: { action: 'setData' },
   },
   decorators: [
