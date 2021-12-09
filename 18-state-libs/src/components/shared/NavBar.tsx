@@ -15,7 +15,7 @@ const menuItems = [
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           State Management
